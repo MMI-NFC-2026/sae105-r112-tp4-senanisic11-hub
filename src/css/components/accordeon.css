@@ -112,3 +112,29 @@
 .accordeon-vertical details > div {
     padding: 10px;
 }
+
+
+/* Triangles de l'accordéon vertical */
+
+.accordeon-vertical summary {
+    position: relative;
+}
+
+/* Triangle lorsque le panneau est fermé */
+
+.accordeon-vertical summary::after {
+    content: "";
+    width: 0;
+    height: 0;
+
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 12px solid grey;
+}
+
+/* Triangle lorsque le panneau est ouvert */
+
+.accordeon-vertical details[open] summary::after {
+    transform: rotate(90deg);
+    border-left-color: #e98296;
+}
