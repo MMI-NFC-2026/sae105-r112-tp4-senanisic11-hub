@@ -1,3 +1,32 @@
 /**
-* Accordeon
+ * Accordeon
 */
+
+.accordeon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.accordeon details {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.accordeon details summary {
+    cursor: pointer;
+}
+
+.accordeon details summary img {
+    width: 160px;
+    height: auto;
+    display: block;
+}
+
+.accordeon details[open] {
+    flex: 1;
+}
+
+
