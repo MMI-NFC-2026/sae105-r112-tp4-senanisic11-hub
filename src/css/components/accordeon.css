@@ -1,3 +1,114 @@
 /**
-* Accordeon
+ * Accordeon
 */
+
+.accordeon {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.accordeon details summary {
+    cursor: pointer;
+}
+
+.accordeon details summary img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.accordeon details[open] {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+}
+
+.accordeon > details > summary {
+  list-style: none;
+}
+.accordeon > details > summary::marker,
+.accordeon > details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Création du triangle personnalisé */
+
+.accordeon > details > summary {
+    position: relative;
+}
+
+.accordeon > details > summary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid black;
+}
+
+/* Triangle lorsque l'accordéon est ouvert */
+
+.accordeon > details[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+
+/* =================================
+   DEUXIEME ACCORDEON : VERSION VERTICALE
+================================= */
+
+.accordeon-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 500px;
+}
+
+/* Apparence générale des panneaux */
+
+.accordeon-vertical details {
+    background-color: #eeeeee;
+    padding: 10px;
+}
+
+/* Apparence du summary */
+
+.accordeon-vertical summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    list-style: none;
+}
+
+/* Suppression du triangle natif */
+
+.accordeon-vertical summary::marker {
+    display: none;
+}
+
+.accordeon-vertical summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Images */
+
+.accordeon-vertical summary img {
+    width: 120px;
+    height: 70px;
+    object-fit: cover;
+}
+
+/* Contenu des panneaux ouverts */
+
+.accordeon-vertical details > div {
+    padding: 10px;
+}
