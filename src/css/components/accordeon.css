@@ -33,3 +33,29 @@
 .accordeon > details > summary::-webkit-details-marker {
   display: none;
 }
+
+/* Création du triangle personnalisé */
+
+.accordeon > details > summary {
+    position: relative;
+}
+
+.accordeon > details > summary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 10px solid black;
+}
+
+/* Triangle lorsque l'accordéon est ouvert */
+
+.accordeon > details[open] > summary::before {
+    transform: rotate(90deg);
+}
